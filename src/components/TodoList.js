@@ -16,7 +16,9 @@ const TodoList = ({state, removedTodo, toggledTodo}) => {
             {state.map(todo =>
                 <div key={todo.id}>
                     <p>
-                        <span onClick={() => handleToggle(todo.id)}>{todo.description}</span>{" "}
+                        <span onClick={() => handleToggle(todo.id)}>
+                            {todo.completed ? <span style={{textDecoration: "line-through"}}>{todo.description}</span> : todo.description}
+                        </span>{" "}
                         <button onClick={() => handleDelete(todo.id)}>Delete</button>
                     </p>
                 </div> 
