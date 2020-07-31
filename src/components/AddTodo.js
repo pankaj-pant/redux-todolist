@@ -21,11 +21,11 @@ const AddTodo = ({addedTodo}) => {
     return (
         <div>
             <form onSubmit={handleSubmitTodo}>
-                <label>
-                    Add Todo:    
+                <label>  
                     <input type="text" name="todo" value={todo} onChange={handleTodoChange}/>
                 </label>
-                <input type="submit" value="Submit"/>
+                {" "}
+                <input type="submit" value="Add Todo"/>
             </form>
         </div>
     )

@@ -12,7 +12,7 @@ const TodoList = ({state, removedTodo, toggledTodo}) => {
     }
     return (
         <div>
-            <h2>List of items</h2>
+            {state.length > 0 ? null : <p>No todos, yay!</p>}
             {state.map(todo =>
                 <div key={todo.id}>
                     <p>
