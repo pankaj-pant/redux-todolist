@@ -21,3 +21,10 @@ export const toggledTodo = (id) => ({
         id: id
     }
 })
+
+export const setFilter = (filter) => ({
+    type: actions.SET_FILTER,
+    payload: {
+        filter: filter
+    }
+})

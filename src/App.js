@@ -3,6 +3,7 @@ import './App.css';
 import store from './redux/store'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
+import VisibilityFilter from './components/VisibilityFilters'
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <h1>Todo List</h1>
       <AddTodo />
       <TodoList />
+      <VisibilityFilter />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {removedTodo, toggledTodo} from '../redux/actionCreators'
 
-const TodoList = ({state, removedTodo, toggledTodo}) => {
+const TodoList = ({todos, visibilityFilter, removedTodo, toggledTodo}) => {
 
     const handleDelete = (id) => {
         removedTodo(id)
@@ -12,8 +12,8 @@ const TodoList = ({state, removedTodo, toggledTodo}) => {
     }
     return (
         <div>
-            {state.length > 0 ? null : <p>No todos, yay!</p>}
-            {state.map(todo =>
+            {todos.length > 0 ? null : <p>No todos, yay!</p>}
+            {todos.map(todo =>
                 <div key={todo.id}>
                     <p>
                         <span onClick={() => handleToggle(todo.id)}>
@@ -27,7 +27,12 @@ const TodoList = ({state, removedTodo, toggledTodo}) => {
     )
 }
 
-const mapStateToProps = (state) => ({state})
+const mapStateToProps = (state) => {
+    return {
+        todos: state.todos,
+        visibilityFilter: state.visibilityFilter
+    }
+}
 
 const mapDispatchToProps = {removedTodo, toggledTodo}
 
