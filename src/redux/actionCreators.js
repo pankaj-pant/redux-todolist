@@ -28,3 +28,17 @@ export const setFilter = (filter) => ({
         filter: filter
     }
 })
+
+export const getTodosByVisibilityFilter = (state, visibilityFilter) => {
+    const allTodos = state.todos
+    switch (visibilityFilter) {
+        case "completed":
+            return allTodos.filter(todo => todo.completed);
+        case "incomplete":
+            return allTodos.filter(todo => !todo.completed);
+        case "all":
+              return allTodos
+        default:
+            return allTodos
+    }
+}

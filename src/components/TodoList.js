@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {removedTodo, toggledTodo} from '../redux/actionCreators'
+import {removedTodo, toggledTodo, getTodosByVisibilityFilter} from '../redux/actionCreators'
 
-const TodoList = ({todos, visibilityFilter, removedTodo, toggledTodo}) => {
+const TodoList = ({todos, removedTodo, toggledTodo}) => {
 
     const handleDelete = (id) => {
         removedTodo(id)
@@ -23,15 +23,15 @@ const TodoList = ({todos, visibilityFilter, removedTodo, toggledTodo}) => {
                     </p>
                 </div> 
             )}
+
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    return {
-        todos: state.todos,
-        visibilityFilter: state.visibilityFilter
-    }
+    const { visibilityFilter } = state;
+    const todos = getTodosByVisibilityFilter(state, visibilityFilter);
+    return { todos };
 }
 
 const mapDispatchToProps = {removedTodo, toggledTodo}
