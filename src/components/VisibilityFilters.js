@@ -5,7 +5,6 @@ import {setFilter} from '../redux/actionCreators'
 const VisibilityFilters = ({visibilityFilter, setFilter}) => {
     return (
         <div>
-            <h2>Filters</h2>
             <p>
                 <span 
                     style={{textDecoration: visibilityFilter === "all" ? "underline" : null}}

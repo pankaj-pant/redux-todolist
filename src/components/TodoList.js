@@ -19,7 +19,8 @@ const TodoList = ({todos, removedTodo, toggledTodo}) => {
                         <span onClick={() => handleToggle(todo.id)}>
                             {todo.completed ? <span style={{textDecoration: "line-through"}}>{todo.description}</span> : todo.description}
                         </span>{" "}
-                        <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                        <i class="fas fa-trash-alt" onClick={() => handleDelete(todo.id)}></i>
+                        {/* <button onClick={() => handleDelete(todo.id)}>Delete</button> */}
                     </p>
                 </div> 
             )}
